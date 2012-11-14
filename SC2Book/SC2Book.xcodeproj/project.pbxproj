@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F56C163316537E27009A52A7 /* RaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56C163216537E27009A52A7 /* RaceViewController.m */; };
 		F5B67F62164B491C00799F50 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B67F61164B491C00799F50 /* UIKit.framework */; };
 		F5B67F64164B491C00799F50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B67F63164B491C00799F50 /* Foundation.framework */; };
 		F5B67F66164B491C00799F50 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5B67F65164B491C00799F50 /* CoreGraphics.framework */; };
@@ -19,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F56C163116537E27009A52A7 /* RaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaceViewController.h; sourceTree = "<group>"; };
+		F56C163216537E27009A52A7 /* RaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaceViewController.m; sourceTree = "<group>"; };
+		F56C163D16539A61009A52A7 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		F5B67F5D164B491C00799F50 /* SC2Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SC2Book.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5B67F61164B491C00799F50 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F5B67F63164B491C00799F50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,8 +82,11 @@
 		F5B67F67164B491C00799F50 /* SC2Book */ = {
 			isa = PBXGroup;
 			children = (
+				F56C163D16539A61009A52A7 /* Global.h */,
 				F5B67F70164B491C00799F50 /* AppDelegate.h */,
 				F5B67F71164B491C00799F50 /* AppDelegate.m */,
+				F56C163116537E27009A52A7 /* RaceViewController.h */,
+				F56C163216537E27009A52A7 /* RaceViewController.m */,
 				F5B67F68164B491C00799F50 /* Supporting Files */,
 			);
 			path = SC2Book;
@@ -166,6 +173,7 @@
 			files = (
 				F5B67F6E164B491C00799F50 /* main.m in Sources */,
 				F5B67F72164B491C00799F50 /* AppDelegate.m in Sources */,
+				F56C163316537E27009A52A7 /* RaceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +248,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SC2Book/SC2Book-Prefix.pch";
 				INFOPLIST_FILE = "SC2Book/SC2Book-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -251,7 +261,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SC2Book/SC2Book-Prefix.pch";
 				INFOPLIST_FILE = "SC2Book/SC2Book-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -275,6 +287,7 @@
 				F5B67F7D164B491C00799F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
