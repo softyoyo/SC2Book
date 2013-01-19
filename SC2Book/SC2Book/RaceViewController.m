@@ -14,6 +14,7 @@
 @synthesize tableView = _tableView;
 @synthesize curSelectSection = _curSelectRow;
 @synthesize RaceHeadViewArrays = _RaceHeadViewArrays;
+@synthesize footerView = _footerView;
 
 - (void)viewDidLoad
 {
@@ -25,7 +26,7 @@
     self.curSelectSection = 0;
     [self.view addSubview:self.tableView];
     
-    self.RaceHeadViewArrays = [[NSMutableArray alloc]initWithCapacity:4];
+    self.RaceHeadViewArrays = [NSMutableArray array];
     for(int i = 0;i<MAX_RACEROW_NUM ;i++)
 	{
 		RaceHeadView* headview = [[RaceHeadView alloc] init];
@@ -34,6 +35,11 @@
         [headview.button setTitle:[NSString stringWithFormat:@"第%d组",i] forState:UIControlStateNormal];
 		[self.RaceHeadViewArrays addObject:headview];
 	}
+    
+    self.footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 160, 10)];
+    self.footerView.backgroundColor = [UIColor clearColor];
+    
+    self.view.backgroundColor = [UIColor blackColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,21 +58,25 @@
     return  UIInterfaceOrientationMaskLandscape;
 }
 
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return  (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
 #pragma mark - TableViewdelegate&&TableViewdataSource
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RaceHeadView* headView = [self.RaceHeadViewArrays objectAtIndex:indexPath.section];
-    return headView.isSelect?120:0;
+    return 120;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 50;
+    return 38;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 0.1;
+    return 10;
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -74,14 +84,20 @@
     return [self.RaceHeadViewArrays objectAtIndex:section];
 }
 
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return self.footerView;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    RaceHeadView* headView = [self.RaceHeadViewArrays objectAtIndex:section];
+    return headView.isSelect?1:0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-     return [self.RaceHeadViewArrays count];
+     return MAX_RACEROW_NUM;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -92,7 +108,15 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier];
     }
-    
+    if([[cell.contentView subviews] count] != 0)
+    {
+        int count = [[cell.contentView subviews] count];
+        for(int i=0; i<count; i++)
+        {
+            UIView *uv = [[cell.contentView subviews] objectAtIndex:i];
+            [uv removeFromSuperview];
+        }
+    }
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 160, 20)];
     label.text = [NSString stringWithFormat:@"%d-%d",indexPath.section,indexPath.row];
     label.backgroundColor = [UIColor clearColor];
@@ -103,10 +127,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //self.curSelectSection = indexPath.section;
-    //[self.tableView reloadData];
-    //CategoryViewController *vc = [[CategoryViewController alloc]init];
-    //[vc.view setFrame:CGRectMake(300, 10, 300, 400)];
+    self.curSelectSection = indexPath.section;
+    [self.tableView reloadData];
+    CategoryViewController *vc = [[CategoryViewController alloc]init];
+    [vc.view setFrame:CGRectMake(200, 10, 300, 400)];
+    [self.view addSubview:vc.view];    
 }
 
 #pragma mark - RaceHeadViewDelegate

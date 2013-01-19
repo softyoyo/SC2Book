@@ -17,10 +17,12 @@
     UITableView *_tableView;
     NSInteger _curSelectSection;
     NSMutableArray* _RaceHeadViewArrays;
+    UIView *_footerView;
 }
 @property(strong,nonatomic) UITableView *tableView;
 @property(nonatomic) NSInteger curSelectSection;
 @property(strong,nonatomic) NSMutableArray* RaceHeadViewArrays;
+@property(strong,nonatomic) UIView *footerView;
 @end
 
 @interface RaceHeadView : UIView
