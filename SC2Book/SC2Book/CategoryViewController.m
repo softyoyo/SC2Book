@@ -18,15 +18,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.view setFrame:CGRectMake(200, 10, 300, 400)];
     self.First = [[UIViewController alloc]init];
     self.Second = [[UIViewController alloc]init];
 	self.nav  = [[UINavigationController alloc]initWithRootViewController:self.First];
-    [self.nav.view setFrame:CGRectMake(0, 0, 200, 300)];
-    self.CategoryTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 180, 280) style:UITableViewStylePlain];
+    [self.nav.view setFrame:CGRectMake(0, 0, 300, 400)];
+    self.CategoryTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 300, 400) style:UITableViewStylePlain];
     self.CategoryTableView.dataSource = self;
     self.CategoryTableView.delegate = self;
     
-    //[self.First.view setFrame:CGRectMake(0, 0, 300, 400)];
     [self.First.view addSubview:self.CategoryTableView];
     [self.view addSubview:self.nav.view];
     

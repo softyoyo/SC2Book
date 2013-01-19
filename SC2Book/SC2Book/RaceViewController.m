@@ -130,7 +130,7 @@
     self.curSelectSection = indexPath.section;
     [self.tableView reloadData];
     CategoryViewController *vc = [[CategoryViewController alloc]init];
-    [vc.view setFrame:CGRectMake(200, 10, 300, 400)];
+    //[vc.view setFrame:CGRectMake(200, 10, 300, 400)];
     [self.view addSubview:vc.view];    
 }
 
