@@ -17,6 +17,7 @@
 		F5B67F74164B491C00799F50 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F5B67F73164B491C00799F50 /* Default.png */; };
 		F5B67F76164B491C00799F50 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5B67F75164B491C00799F50 /* Default@2x.png */; };
 		F5B67F78164B491C00799F50 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5B67F77164B491C00799F50 /* Default-568h@2x.png */; };
+		F5D0EE011654DF07008D1B1B /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0EE001654DF07008D1B1B /* CategoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		F5B67F73164B491C00799F50 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		F5B67F75164B491C00799F50 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		F5B67F77164B491C00799F50 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F5D0EDFF1654DF07008D1B1B /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		F5D0EE001654DF07008D1B1B /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,8 @@
 				F5B67F71164B491C00799F50 /* AppDelegate.m */,
 				F56C163116537E27009A52A7 /* RaceViewController.h */,
 				F56C163216537E27009A52A7 /* RaceViewController.m */,
+				F5D0EDFF1654DF07008D1B1B /* CategoryViewController.h */,
+				F5D0EE001654DF07008D1B1B /* CategoryViewController.m */,
 				F5B67F68164B491C00799F50 /* Supporting Files */,
 			);
 			path = SC2Book;
@@ -174,6 +179,7 @@
 				F5B67F6E164B491C00799F50 /* main.m in Sources */,
 				F5B67F72164B491C00799F50 /* AppDelegate.m in Sources */,
 				F56C163316537E27009A52A7 /* RaceViewController.m in Sources */,
+				F5D0EE011654DF07008D1B1B /* CategoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

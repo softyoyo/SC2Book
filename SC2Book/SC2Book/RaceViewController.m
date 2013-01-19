@@ -7,21 +7,13 @@
 //
 
 #import "RaceViewController.h"
+#import "CategoryViewController.h"
 #import "Global.h"
 
 @implementation RaceViewController
 @synthesize tableView = _tableView;
 @synthesize curSelectSection = _curSelectRow;
 @synthesize RaceHeadViewArrays = _RaceHeadViewArrays;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -113,6 +105,8 @@
 {
     //self.curSelectSection = indexPath.section;
     //[self.tableView reloadData];
+    //CategoryViewController *vc = [[CategoryViewController alloc]init];
+    //[vc.view setFrame:CGRectMake(300, 10, 300, 400)];
 }
 
 #pragma mark - RaceHeadViewDelegate
@@ -135,6 +129,7 @@
 }
 @end
 
+#pragma mark
 @implementation RaceHeadView
 @synthesize delegate = _delegate;
 @synthesize section = _section;

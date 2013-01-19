@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RaceViewController.h"
+#import "CategoryViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
